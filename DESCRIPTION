@@ -4,7 +4,9 @@ Version: 0.0.0.9000
 Authors@R: 
     person("Peiyao", "Wang", , "peiyaow76@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: TBD.
+Description: An R package that implements the JICO algorithm. It aims at solving the multi-group regression problem. 
+        The algorithm decomposes the responses from multiple groups into shared and group-specific components, 
+        which are driven by low-rank approximations of joint and individual structures from the covariates respectively.
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
 Encoding: UTF-8
