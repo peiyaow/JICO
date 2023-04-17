@@ -1,0 +1,20 @@
+Package: JICO
+Title: Joint and Individual Regression
+Version: 0.0.0.9000
+Authors@R: 
+    person("Peiyao", "Wang", , "peiyaow76@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: TBD.
+License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
+    license
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Imports: 
+        nleqslv, 
+        Matrix, 
+        MASS, 
+        rlist
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
