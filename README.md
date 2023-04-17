@@ -7,11 +7,6 @@ You can install the package through use devtools:
 devtools::install_github("peiyaow/JICO", upgrade_dependencies = FALSE)
 ```
 
-To test if the installation is successful:
-```r
-devtools::test()
-```
-
 # Overview
 To see the full list of exported functions:
 
