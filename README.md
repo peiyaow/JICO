@@ -42,6 +42,7 @@ set.seed(78)
 X1 = MASS::mvrnorm(n1, rep(0, p), diag(p)) # covariates of the first group
 X2 = MASS::mvrnorm(n2, rep(0, p), diag(p)) # covariates of the second group
 X.list = list(X1, X2)
+X = rbind(X1, X2)
 
 q = r
 q1 = r1
