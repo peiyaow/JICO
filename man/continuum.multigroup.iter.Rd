@@ -39,7 +39,7 @@ gam >= 1e10 for PCR model.}
 
 \item{maxiter}{The maximum number of iterations to conduct before algorithm convergence.}
 
-\item{conv}{The tolerance level for covergence.}
+\item{conv}{The tolerance level for convergence.}
 
 \item{center.X}{Boolean. If X should be preprocessed with centralization.}
 
@@ -47,7 +47,7 @@ gam >= 1e10 for PCR model.}
 
 \item{center.Y}{Boolean. If Y should be preprocessed with centralization.}
 
-\item{scale.Y}{Boolean. If Y should be preprocessed with scaline.}
+\item{scale.Y}{Boolean. If Y should be preprocessed with scaling.}
 
 \item{orthIndiv}{Boolean. If we impose the orthogonality constraint on individual components.}
 
@@ -59,8 +59,7 @@ gam >= 1e10 for PCR model.}
 The estimated parameters from JICO.
 }
 \description{
-This function iteratively solves the multi-group regression problem using the JICO algorithm.
-JICO paper: https://arxiv.org/pdf/2209.12388.pdf
+This function iteratively solves the multi-group regression problem using the JICO algorithm [Wang, P., Wang, H., Li, Q., Shen, D., & Liu, Y. (2022). <arXiv:2209.12388>]
 }
 \examples{
 set.seed(76)
@@ -68,8 +67,8 @@ X1 = MASS::mvrnorm(50, rep(0, 200), diag(200)) # covariates of the first group
 X2 = MASS::mvrnorm(50, rep(0, 200), diag(200)) # covariates of the second group
 X.list = list(X1, X2)
 
-Y1 = matrix(rnorm(50)) # responses for the first group
-Y2 = matrix(rnorm(50)) # responses for the second group
+Y1 = matrix(stats::rnorm(50)) # responses for the first group
+Y2 = matrix(stats::rnorm(50)) # responses for the second group
 Y.list = list(Y1, Y2)
 
 ml.JICO = continuum.multigroup.iter(

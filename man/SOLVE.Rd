@@ -7,7 +7,7 @@
 SOLVE(x)
 }
 \arguments{
-\item{X}{The input matrix X}
+\item{x}{The input matrix X}
 }
 \value{
 Either the general inverse of X or the X itself

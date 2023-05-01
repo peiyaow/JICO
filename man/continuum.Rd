@@ -29,7 +29,7 @@ JICO uses zero as default.}
 gam >= 1e10 for PCR model}
 
 \item{om}{The desired number of weight vectors to obtain in the CR algorithm, i.e. the predefined rank of
-joint or individual componenet}
+joint or individual component.}
 
 \item{U_old}{The given inputs U from the previous JICO iteration step}
 
@@ -46,5 +46,5 @@ A list of CR outputs that serve as the input for the next JICO iteration
 }
 \description{
 This function performs an iteration update of the JICO algorithm using the CR algorithm.
-Details can be found in Appendix B in the JICO paper: https://arxiv.org/pdf/2209.12388.pdf
+Details can be found in Appendix B in the JICO paper [Wang, P., Wang, H., Li, Q., Shen, D., & Liu, Y. (2022). <arXiv:2209.12388>]
 }

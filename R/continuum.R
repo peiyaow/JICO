@@ -183,8 +183,8 @@ continuum = function(X, Y, lambda, gam, om,
 #' X2 = MASS::mvrnorm(50, rep(0, 200), diag(200)) # covariates of the second group
 #' X.list = list(X1, X2)
 #'
-#' Y1 = matrix(rnorm(50)) # responses for the first group
-#' Y2 = matrix(rnorm(50)) # responses for the second group
+#' Y1 = matrix(stats::rnorm(50)) # responses for the first group
+#' Y2 = matrix(stats::rnorm(50)) # responses for the second group
 #' Y.list = list(Y1, Y2)
 #'
 #' ml.JICO = continuum.multigroup.iter(
@@ -258,8 +258,8 @@ continuum.multigroup.iter = function(X.list, Y.list, lambda = 0, gam, rankJ, ran
   Y.homo = Y
   Y.homo.list = Y.list
   
-  C = matrix(rnorm(p*rankJ, 0, sd), p, rankJ)
-  Cind = lapply(1:G, function(g) matrix(rnorm(p*rankA[g], 0, sd), p, rankA[g]))
+  C = matrix(stats::rnorm(p*rankJ, 0, sd), p, rankJ)
+  Cind = lapply(1:G, function(g) matrix(stats::rnorm(p*rankA[g], 0, sd), p, rankA[g]))
   Cind_tot = do.call(cbind, Cind)
   P = Cind_tot%*%SOLVE(t(Cind_tot)%*%Cind_tot)%*%t(Cind_tot)
   
@@ -466,8 +466,8 @@ continuum.multigroup.iter = function(X.list, Y.list, lambda = 0, gam, rankJ, ran
 #' X2 = MASS::mvrnorm(50, rep(0, 200), diag(200)) # covariates of the second group
 #' X.list = list(X1, X2)
 #'
-#' Y1 = matrix(rnorm(50)) # responses for the first group
-#' Y2 = matrix(rnorm(50)) # responses for the second group
+#' Y1 = matrix(stats::rnorm(50)) # responses for the first group
+#' Y2 = matrix(stats::rnorm(50)) # responses for the second group
 #' Y.list = list(Y1, Y2)
 #' 
 #' cv.parameter.set = parameter.set.G_2(

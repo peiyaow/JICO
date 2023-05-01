@@ -41,7 +41,7 @@ JICO uses zero as default.}
 
 \item{center.Y}{Boolean. If Y should be preprocessed with centralization.}
 
-\item{scale.Y}{Boolean. If Y should be preprocessed with scaline.}
+\item{scale.Y}{Boolean. If Y should be preprocessed with scaling.}
 
 \item{orthIndiv}{Boolean. If we impose the orthogonality constraint on individual components.}
 
@@ -65,8 +65,8 @@ X1 = MASS::mvrnorm(50, rep(0, 200), diag(200)) # covariates of the first group
 X2 = MASS::mvrnorm(50, rep(0, 200), diag(200)) # covariates of the second group
 X.list = list(X1, X2)
 
-Y1 = matrix(rnorm(50)) # responses for the first group
-Y2 = matrix(rnorm(50)) # responses for the second group
+Y1 = matrix(stats::rnorm(50)) # responses for the first group
+Y2 = matrix(stats::rnorm(50)) # responses for the second group
 Y.list = list(Y1, Y2)
 
 cv.parameter.set = parameter.set.G_2(
