@@ -6,7 +6,7 @@ Authors@R:
 Description: An R package that implements the JICO algorithm [Wang, P., Wang, H., Li, Q., Shen, D., & Liu, Y. (2022). <arXiv:2209.12388>]. 
         It aims at solving the multi-group regression problem. The algorithm decomposes the responses from multiple groups into shared and group-specific
         components, which are driven by low-rank approximations of joint and individual structures from the covariates respectively. 
-License: use_gpl_license()
+License: GPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
