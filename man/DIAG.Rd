@@ -13,5 +13,5 @@ DIAG(e)
 A square diagonal matrix using the input as diagonal elements
 }
 \description{
-This function returns a diagonal matrix using the input vector or number as diagonal.
+This function returns a diagnoal matrix using the input vector or number as diagonal.
 }

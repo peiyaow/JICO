@@ -39,7 +39,7 @@ gam >= 1e10 for PCR model.}
 
 \item{maxiter}{The maximum number of iterations to conduct before algorithm convergence.}
 
-\item{conv}{The tolerance level for convergence.}
+\item{conv}{The tolerance level for covergence.}
 
 \item{center.X}{Boolean. If X should be preprocessed with centralization.}
 
@@ -47,7 +47,7 @@ gam >= 1e10 for PCR model.}
 
 \item{center.Y}{Boolean. If Y should be preprocessed with centralization.}
 
-\item{scale.Y}{Boolean. If Y should be preprocessed with scaling.}
+\item{scale.Y}{Boolean. If Y should be preprocessed with scaline.}
 
 \item{orthIndiv}{Boolean. If we impose the orthogonality constraint on individual components.}
 
@@ -59,7 +59,8 @@ gam >= 1e10 for PCR model.}
 The estimated parameters from JICO.
 }
 \description{
-This function iteratively solves the multi-group regression problem using the JICO algorithm [Wang, P., Wang, H., Li, Q., Shen, D., & Liu, Y. (2022). <arXiv:2209.12388>]
+This function iteratively solves the multi-group regression problem using the JICO algorithm.
+JICO paper: https://arxiv.org/pdf/2209.12388.pdf
 }
 \examples{
 set.seed(76)

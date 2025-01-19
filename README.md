@@ -62,6 +62,23 @@ ml.JICO = continuum.multigroup.iter(
   maxiter = 300
 )
 
+# fit the model to get predictions
+Yhat.list = list() 
+resid.list = list()
+MSEs = c()
+for (g in 1:length(X.list)){
+  # estimated response per group
+  Yhat.list[[g]] = as.numeric(ml.JICO$intercept) + 
+    X.list[[g]]%*%ml.JICO$beta.C[[g]] + 
+    X.list[[g]]%*%ml.JICO$Cind[[g]]
+   
+  # residuals per group
+  resid.list[[g]] = (Yhat.list[[g]] - Y.list[[g]])^2
+  
+  # mean squared error per group
+  MSEs = c(MSEs, mean(resid.list[[g]]))
+}
+
 cv.parameter.set = parameter.set.G_2(
   maxrankA = 1, maxrankJ = 1, gamma = 1e12
 ) # enumerate the set of tuning parameters
@@ -82,5 +99,3 @@ cv.ml.JICO = cv.continnum.iter(
 # $gam
 # [1] 1e+12
 ```
-
-Section 

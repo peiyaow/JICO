@@ -23,7 +23,7 @@ parameter.set.G_2 = function(maxrankA, maxrankJ, gamma){
 #' This function computes the general inverse of X when it exists. 
 #' If X contains a degenerated dimension, return the original X.
 #'
-#' @param X The input matrix X
+#' @param x The input matrix X
 #' @return Either the general inverse of X or the X itself
 SOLVE = function(x){
   if (sum(dim(x))){

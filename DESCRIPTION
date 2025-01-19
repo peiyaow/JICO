@@ -1,15 +1,15 @@
 Package: JICO
 Title: Joint and Individual Regression
-Version: 0.0.0.9000
+Version: 0.1
 Authors@R: 
     person("Peiyao", "Wang", , "peiyaow76@gmail.com", role = c("aut", "cre"))
-Description: An R package that implements the JICO algorithm [Wang, P., Wang, H., Li, Q., Shen, D., & Liu, Y. (2022). <arXiv:2209.12388>]. 
+Description: An R package that implements the JICO algorithm [Wang, P., Wang, H., Li, Q., Shen, D., & Liu, Y. (2024). <Journal of Computational and Graphical Statistics, 33(3), 763-773>]. 
         It aims at solving the multi-group regression problem. The algorithm decomposes the responses from multiple groups into shared and group-specific
         components, which are driven by low-rank approximations of joint and individual structures from the covariates respectively. 
-License: GPL (>= 3)
+License: GPL-3 + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 Imports: 
         nleqslv, 
         Matrix, 
