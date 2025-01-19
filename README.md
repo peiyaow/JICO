@@ -1,5 +1,5 @@
 # JICO
-R package with implementations of the JICO algorithm: https://arxiv.org/abs/2209.12388
+R package with implementations of the JICO algorithm: https://www.tandfonline.com/doi/full/10.1080/10618600.2023.2284227
 
 # How to Install
 You can install the package through use devtools:
