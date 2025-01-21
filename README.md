@@ -47,9 +47,9 @@ X = rbind(X1, X2)
 q = r
 q1 = r1
 q2 = r2
-V = matrix(svd(X)$v[,1:q], ncol = q)%*%rep(1/sqrt(q), q)
-V1 = matrix(svd(X1%*%(diag(p) - V%*%t(V)))$v[,1:q1], ncol = q1)%*%rep(1/sqrt(q1), q1)
-V2 = matrix(svd(X2%*%(diag(p) - V%*%t(V)))$v[,1:q2], ncol = q2)%*%rep(1/sqrt(q2), q2)
+V = matrix(svd(X)$v[,1:q], ncol = q)*rep(1/sqrt(q), q)
+V1 = matrix(svd(X1%*%(diag(p) - V%*%t(V)))$v[,1:q1], ncol = q1)*rep(1/sqrt(q1), q1)
+V2 = matrix(svd(X2%*%(diag(p) - V%*%t(V)))$v[,1:q2], ncol = q2)*rep(1/sqrt(q2), q2)
 
 e1 = rnorm(n1)*0.2
 e2 = rnorm(n2)*0.2
@@ -57,12 +57,13 @@ Y1 = X1%*%V%*%alpha + X1%*%V1%*%alpha1 + e1 # responses for the first group
 Y2 = X2%*%V%*%alpha + X2%*%V2%*%alpha2 + e2 # responses for the second group
 Y.list = list(Y1, Y2)
 
+# fit the model using oracle ranks
 ml.JICO = continuum.multigroup.iter(
-  X.list, Y.list, gam=1e12, rankJ=1, rankA=c(1, 1),
+  X.list, Y.list, gam=1e12, rankJ=r, rankA=c(r1, r2),
   maxiter = 300
 )
 
-# fit the model to get predictions
+# use the fitted model to get predictions
 Yhat.list = list() 
 resid.list = list()
 MSEs = c()
@@ -70,8 +71,8 @@ for (g in 1:length(X.list)){
   # estimated response per group
   Yhat.list[[g]] = as.numeric(ml.JICO$intercept) + 
     X.list[[g]]%*%ml.JICO$beta.C[[g]] + 
-    X.list[[g]]%*%ml.JICO$Cind[[g]]
-   
+    X.list[[g]]%*%ml.JICO$beta.Cind[[g]]
+  
   # residuals per group
   resid.list[[g]] = (Yhat.list[[g]] - Y.list[[g]])^2
   
